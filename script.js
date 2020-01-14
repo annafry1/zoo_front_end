@@ -1,24 +1,29 @@
 var animalPop = 0;
+var allAnimals = [];
 
 function run(){
     var tigger = new Tiger("Tigger");
-    // tigger.eat("meat");
-    // tigger.eat("kibble");
     var pooh = new Bear("Pooh");
-    // pooh.eat("fish");
-    // pooh.eat("meat");
     var rarity = new Unicorn("Rarity");
-    // rarity.eat("marshmallows");
     var gemma = new Giraffe("Gemma");
-    // gemma.eat("meat");
     var stinger = new Bee("Stinger");
-    // stinger.eat("ice cream");
-    // stinger.eat("pollen");
-    var zoeBot = new Zookeeper("Zoebot");
-    zoeBot.feedAnimals([tigger, stinger, gemma, rarity, pooh], "meat");
-    console.log(Animal.getPop());
 }
 
+function createAnimal(){
+
+}
+
+function feedAnimals(){
+
+}
+
+function listAnimals(){
+    
+}
+
+function deleteAnimal() {
+    
+}
 class Zookeeper {
     constructor(name){
         this.name = name;
