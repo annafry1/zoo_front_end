@@ -1,24 +1,69 @@
+
 var animalPop = 0;
 var allAnimals = [];
 
+$(document).ready(function () {
+    run();
+    console.log(allAnimals);
+});
+
 function run(){
+    //createAnimal();
     var tigger = new Tiger("Tigger");
+    listAnimals(tigger);
     var pooh = new Bear("Pooh");
+    listAnimals(pooh);
     var rarity = new Unicorn("Rarity");
+    listAnimals(rarity);
     var gemma = new Giraffe("Gemma");
+    listAnimals(gemma);
     var stinger = new Bee("Stinger");
+    listAnimals(stinger);
 }
 
 function createAnimal(){
+    //$("#actions").html("");
+    var name = $("#name").val();
+    var animal = "";
+    if (name === ""){
+        alert("Please enter a name. ");
+    }else{
+        switch ($("#species").val()){
+            case "Tiger":
+                animal = new Tiger(name);
+                break;
+            case "Bear":
+                animal = new Bear(name);
+                break;
+            case "Unicorn":
+                animal = new Unicorn(name);
+                break;
+            case "Giraffe":
+                animal = new Giraffe(name);
+                break;
+            default:
+                animal = new Bee(name);
+        }
+    }
+
+    listAnimals(animal);
+    console.log(allAnimals);
+    console.log(animal);
 
 }
 
 function feedAnimals(){
-
+    $("#actions").html("");
+    var food = $("#food").val();
+    for (var i = 0; i < allAnimals.length; i ++){
+        allAnimals[i].eat(food);
+    }
+    console.log(food);
 }
 
-function listAnimals(){
-    
+function listAnimals(animal){
+    allAnimals.push(animal);
+    $("#list").append(animal.name + " is a " + animal.constructor.name + " whose favorite food is " + animal.favoriteFood + ". ");
 }
 
 function deleteAnimal() {
