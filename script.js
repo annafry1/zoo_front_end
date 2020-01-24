@@ -63,7 +63,7 @@ function feedAnimals(){
 
 function listAnimals(animal){
     allAnimals.push(animal);
-    $("#list").append(animal.name + " is a " + animal.constructor.name + " whose favorite food is " + animal.favoriteFood + ". ");
+    $("#list").append("<div>" + animal.name + " is a " + animal.constructor.name + " whose favorite food is " + animal.favoriteFood + ". </div>");
 }
 
 function deleteAnimal() {
